@@ -1,7 +1,7 @@
 # Impresora 2D en Python
 
 [![PyPI](https://img.shields.io/pypi/v/markitdown.svg)](https://pypi.org/project/markitdown/)
-![PyPI - Downloads](Software_libre)
+![PyPI - Downloads]
 [![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)]
 
 > [!IMPORTANTE]
