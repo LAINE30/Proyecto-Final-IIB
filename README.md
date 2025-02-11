@@ -1,10 +1,10 @@
 # Impresora 2D en Python
 
 [![PyPI](https://img.shields.io/pypi/v/markitdown.svg)](https://pypi.org/project/markitdown/)
-![PyPI - Downloads](https://img.shields.io/pypi/dd/markitdown)
-[![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)](Grupo4:3)
+![PyPI - Downloads](Software_libre)
+[![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)]
 
-> [!IMPORTANT]
+> [!IMPORTANTE]
 > Impresora 2D en Python 1.0.0 alpha 1. Este proyecto es una impresora 2D escrita en Python que permite crear patrones y dibujos básicos en una cuadrícula utilizando coordenadas cartesianas.
 
 
@@ -20,46 +20,53 @@
 
 ## Instalación
 
+Para instalar Impresora2D, usa pip: `pip install Impresora2D`. Por otra parte, tu puedes instalarlo de otra forma:
+
+```bash
+git clone github.com/LAINE30/Proyecto-Final-IIB.git
+cd Impresora2D
+pip install -e .
+```
+## Uso
+
+### Desde la línea de comandos de shell
+
+```bash
+python Impresora2D.py
+```
+En la ventana principal tu puedes modificar aspectos tales como:
+- Seleccionar archivo SVG
+- Distancia entre puntos (0.1-0.5mm)
+- Velocidad de animación
+- Cambiar el color de impresión
+
+### Plugins
+
+Por ahora esta versión no soporta plugins, pero en actualizaciones futuras tendrá grandes novedades...
+
+Para encontrar plugins válidos,uscar en GitHub con en hashtag #Impresora2D-plugins
+
+## Archivos necesarios
+
 Para instalar las dependencias del proyecto, puedes ejecutar:
 
+```bash
 pip install -r requirements.txt
+```
 
-Si deseas instalarlo desde el código fuente:
-
-git clone https://github.com/tu-usuario/impresora-2d-python.git
-cd impresora-2d-python
-pip install -e .
-
-Uso
-
-Desde la línea de comandos
-
-Ejemplo de uso para dibujar una línea:
-
-python impresora2d.py --figura linea --x1 0 --y1 0 --x2 10 --y2 10
-
-Para generar un archivo de salida con el dibujo:
-
-python impresora2d.py --figura cuadrado --x 5 --y 5 --lado 10 -o dibujo.txt
-
-Desde Python
+## Desde Python
 
 Puedes utilizar la impresora 2D dentro de tus proyectos de Python de la siguiente manera:
 
 from impresora2d import Impresora2D
 
+```python
 impresora = Impresora2D()
 impresora.dibujar_linea(0, 0, 10, 10)
 impresora.guardar('dibujo.txt')
+```
 
-Docker
-
-Si prefieres usar Docker, puedes ejecutar el proyecto de la siguiente manera:
-
-docker build -t impresora2d:latest .
-docker run --rm impresora2d:latest --figura circulo --x 5 --y 5 --radio 3
-
-Contribuir
+## Contribuir
 
 Este proyecto es de código abierto y se aceptan contribuciones. Puedes ayudar de las siguientes maneras:
 
@@ -67,7 +74,7 @@ Reportando errores o sugiriendo mejoras en la sección de Issues.
 
 Enviando pull requests con nuevas funciones o correcciones.
 
-Pasos para contribuir
+## Pasos para contribuir
 
 Haz un fork del repositorio.
 
