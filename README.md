@@ -1,10 +1,11 @@
 # Impresora 2D en Python
 
-[![PyPI](https://img.shields.io/pypi/v/markitdown.svg)](https://pypi.org/project/markitdown/)
-![PyPI - Downloads]
-[![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)]
 
-> [!IMPORTANTE]
+[![PyPI](https://img.shields.io/pypi/v/markitdown.svg)](https://laine30.github.io/)
+![PyPI - Downloads](https://img.shields.io/pypi/dd/markitdown)
+[![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)](https://github.com/LAINE30/Proyecto-Final-IIB.git)
+
+> [!IMPORTANT]
 > Impresora 2D en Python 1.0.0 alpha 1. Este proyecto es una impresora 2D escrita en Python que permite crear patrones y dibujos básicos en una cuadrícula utilizando coordenadas cartesianas.
 
 
