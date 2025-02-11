@@ -4,18 +4,19 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dd/markitdown)
 [![Built by AutoGen Team](https://img.shields.io/badge/Built%20by-AutoGen%20Team-blue)](https://github.com/microsoft/autogen)
 
+> [!IMPORTANT]
+> Impresora 2D en Python 1.0.0 alpha 1. Este proyecto es una impresora 2D escrita en Python que permite crear patrones y dibujos básicos en una cuadrícula utilizando coordenadas cartesianas.
 
-Este proyecto es una impresora 2D escrita en Python que permite crear patrones y dibujos básicos en una cuadrícula utilizando coordenadas cartesianas.
 
 ## Características
 
-Dibujo de figuras geométricas simples (líneas, cuadrados, círculos).
+- Dibujo de figuras geométricas simples (líneas, cuadrados, círculos).
 
-Guardado e impresión de patrones en formato de texto o imagen.
+- Guardado e impresión de patrones en formato de texto o imagen.
 
-Interfaz de línea de comandos para dibujar figuras mediante comandos sencillos.
+- Interfaz gráfica fácil e intuitiva de manejar
 
-Fácil de extender para agregar nuevas figuras o funciones de impresión.
+- Fácil de extender para agregar nuevas figuras o funciones de impresión.
 
 ## Instalación
 
