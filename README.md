@@ -1,4 +1,4 @@
-# Impresora 2D en Python
+# Impresora 3D en Python
 
 [![PyPI](https://img.shields.io/pypi/v/markitdown.svg)](https://pypi.org/project/markitdown/)
 ![PyPI - Downloads](https://img.shields.io/pypi/dd/markitdown)
