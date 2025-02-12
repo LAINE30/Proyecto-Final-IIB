@@ -1,6 +1,3 @@
-import os
-import xml.etree.ElementTree as ET
-import matplotlib.patches as patches
 import tkinter as tk
 import numpy as np
 import svgpathtools
@@ -12,6 +9,9 @@ from matplotlib.path import Path
 import time
 
 def show_loading_screen():
+
+    """Muestra una pantalla de carga con una barra de progreso."""
+    
     loading_root = tk.Tk()
     loading_root.overrideredirect(True)
     loading_root.configure(bg='black')
@@ -21,6 +21,9 @@ def show_loading_screen():
     loading_label.pack(expand=True)
     
     def update_progress():
+
+        """Actualiza la barra de progreso."""
+
         for i in range(1, 101):
             loading_label.config(text=f"Cargando... {i}%", fg='red')
             loading_root.update()
@@ -31,6 +34,9 @@ def show_loading_screen():
     loading_root.mainloop()
 
 def load_svg():
+
+    """Carga un archivo SVG y procesa sus trayectorias, para poder extraer el contorno."""
+
     file_name = svg_var.get()
     if not file_name:
         return
@@ -39,16 +45,33 @@ def load_svg():
     process_svg(paths, file_name)
 
 def process_svg(paths, file_name):
+
+    """
+    Extrae los puntos de contorno de un SVG y los envía para llenado.
+    
+    Args:
+        paths (list): Lista de rutas extraídas del SVG.
+        file_name (str): Nombre del archivo SVG procesado.
+    """
+
     contour = []
     for path in paths:
         for segment in path:
-            points = np.linspace(0, 1, 100)
+            points = np.linspace(0, 1, 10)
             for point in points:
                 pos = segment.point(point)
                 contour.append((pos.real, pos.imag))
     fill_shape(contour, file_name)
 
 def validate_resolution():
+
+    """
+    Valida la distancia entre puntos ingresada por el usuario.
+    
+    Returns:
+        float: Valor de distancia si es válido, None si es inválido.
+    """
+
     try:
         value = float(resolution_entry.get())
         if 0.1 <= value <= 0.5:
@@ -61,6 +84,14 @@ def validate_resolution():
         return None
 
 def validate_speed():
+
+    """
+    Valida la velocidad de animación ingresada por el usuario.
+    
+    Returns:
+        int: Velocidad si es válida, None si es inválida.
+    """
+
     try:
         value = int(speed_entry.get())
         if value > 0:
@@ -73,12 +104,24 @@ def validate_speed():
         return None
 
 def choose_color():
+
+    """Permite al usuario seleccionar un color para los puntos de relleno."""
+
     global point_color
     color = colorchooser.askcolor()[1]
     if color:
         point_color = color
 
 def fill_shape(contour, file_name):
+
+    """
+    Genera un patrón de relleno dentro de la forma delimitada por el contorno.
+    
+    Args:
+        contour (list): Lista de coordenadas que forman el contorno.
+        file_name (str): Nombre del archivo SVG procesado.
+    """
+
     x, y = zip(*contour)
     point_spacing = validate_resolution()
     if point_spacing is None:
@@ -104,6 +147,17 @@ def fill_shape(contour, file_name):
     animate_trajectory(contour, filling_points, x_range, y_range)
 
 def animate_trajectory(contour, filling_points, x_range, y_range):
+
+    """
+    Anima el relleno de la forma siguiendo el patrón de trayectoria.
+    
+    Args:
+        contour (list): Lista de coordenadas del contorno.
+        filling_points (list): Puntos de relleno generados.
+        x_range (tuple): Rango del eje X.
+        y_range (tuple): Rango del eje Y.
+    """
+
     ax.clear()
     x_contour, y_contour = zip(*contour)
     x_fill, y_fill = zip(*filling_points) if filling_points else ([], [])
@@ -126,6 +180,9 @@ def animate_trajectory(contour, filling_points, x_range, y_range):
     canvas.draw()
 
 def start_ui():
+
+    """Inicializa la interfaz gráfica de la aplicación."""
+
     show_loading_screen()
     
     global resolution_entry, speed_entry, svg_var, canvas, fig, ax, root, point_color
