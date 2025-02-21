@@ -131,6 +131,8 @@ def fill_shape(contour, file_name):
     
     if file_name == "casa.svg":
         x_range, y_range = (0.5, 7.5), (1, 7.5)
+    elif file_name == "estrella.svg":
+        x_range, y_range = (30, 70), (20, 50)
     else:
         x_range, y_range = (0, 10), (-1, 8)
     
@@ -207,7 +209,7 @@ def start_ui():
     
     tk.Label(control_frame, text="Seleccionar archivo SVG", bg='black', fg='white').pack()
     svg_var = tk.StringVar(value="forma1.svg")
-    svg_options = ["avion.svg", "casa.svg", "forma1.svg", "forma2.svg"]
+    svg_options = ["avion.svg", "casa.svg", "forma1.svg", "forma2.svg", "estrella.svg"]
     svg_menu = tk.OptionMenu(control_frame, svg_var, *svg_options)
     svg_menu.config(bg='crimson', fg='white')
     svg_menu.pack()
